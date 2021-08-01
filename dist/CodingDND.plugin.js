@@ -31,6 +31,21 @@ WScript.Quit();
 */
 // @ts-ignore
 const Bapi = BdApi;
+class CodingDND{
+    getName() {return "CodingDND";}
+    getDescription() {return "This plugin will set the Do Not Disturb status when you open an IDE , Maded by SMC242 Continued by Alex";}
+    getVersion() {return "3.3.4";}
+    getAuthor() {return "SMC242";}
+
+    start() {
+        if (!global.ZeresPluginLibrary) return window.BdApi.alert("Library Missing",`The library plugin needed for ${this.getName()} is missing.<br /><br /> <a href="https://betterdiscord.net/ghdl?url=https://raw.githubusercontent.com/rauenzi/BDPluginLibrary/master/release/0PluginLibrary.plugin.js" target="_blank">Click here to download the library!</a>`);
+        ZLibrary.PluginUpdater.checkForUpdate(this.getName(), this.getVersion(), "https://raw.githubusercontent.com/SMC242/CodingDND/master/dist/CodingDND.plugin.js");
+    }
+
+    stop() {
+
+	}
+}
 const { execSync } = require("child_process");
 // typescript stuff
 function not_empty(value) {
@@ -172,7 +187,7 @@ module.exports = (() => {
                     github_username: "SMC242",
                 },
             ],
-            version: "3.2.7",
+            version: "3.3.3",
             description: "This plugin will set the Do Not Disturb status when you open an IDE.",
             github: "https://github.com/SMC242/CodingDND/tree/stable",
             github_raw: "https://raw.githubusercontent.com/SMC242/CodingDND/stable/CodingDND.plugin.js",
